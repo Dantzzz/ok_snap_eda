@@ -21,3 +21,7 @@ for the state of Oklahoma, subsetted from the USDA FNS national dataset via BigQ
 | FIPS | int | Federal Information Processing Standard code | standard numeric ID for counties; used as filter key for OK (40--); convert from int to chr |
 | SubCounty | int | Sub-county assigned number | Nearly all values are 1; max of 2 warrants investigation |
 | Program | chr | Program abbreviation | All values are EBT; no variation in OK, though other values (SSI, GRH, and WRI) appear nationally |
+
+**Notes after Cleaning**:
+- `SubCounty` value of 2 corresponds exclusively to Oklahoma County (`FIPS` 40109). All Oklahoma County records are assigned this value for the `SubCounty` field. Likely an FNS administrative designation rather than a geographic subdivision.
+- 27 Records indicate zero issuance (`SNAP_All_Issuance` = 0) despite non-zero participation counts. These records are distributed across multiple counties and dates ranging between January 2015 to July 2017. Likely a reporting gap rather than zero issuance. Flag for further consideration.

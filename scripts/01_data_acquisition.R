@@ -26,3 +26,7 @@ dbDisconnect(conn)
 ### Save output as CSV
 write.csv(query, "data/snap_enrollment_oklahoma.csv", row.names = FALSE)
 message("Data saved: ", nrow(query), " records retrieved." )
+
+# Clean up environment
+rm(query) 
+rm(conn)
