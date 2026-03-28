@@ -13,7 +13,7 @@ conn <- dbConnect(
   drv = bigquery(),
   project = "bigquery-public-data",
   dataset = "sdoh_snap_enrollment",
-  billing = "dbeaver-test-project"
+  billing = Sys.getenv("BILLING_KEY")
 )
 
 ### Query to retrieve SNAP enrollment data
@@ -22,5 +22,7 @@ query <- dbGetQuery(conn, "
                     FROM `bigquery-public-data.sdoh_snap_enrollment.snap_enrollment`
                     WHERE FIPS LIKE '40%';
                     ")
+dbDisconnect(conn)
 ### Save output as CSV
 write.csv(query, "data/snap_enrollment_oklahoma.csv", row.names = FALSE)
+message("Data saved: ", nrow(query), " records retrieved." )
