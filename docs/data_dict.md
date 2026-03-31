@@ -25,3 +25,13 @@ for the state of Oklahoma, subsetted from the USDA FNS national dataset via BigQ
 **Notes after Cleaning**:
 - `SubCounty` value of 2 corresponds exclusively to Oklahoma County (`FIPS` 40109). All Oklahoma County records are assigned this value for the `SubCounty` field. Likely an FNS administrative designation rather than a geographic subdivision.
 - 27 Records indicate zero issuance (`SNAP_All_Issuance` = 0) despite non-zero participation counts. These records are distributed across multiple counties and dates ranging between January 2015 to July 2017. Likely a reporting gap rather than zero issuance. Flag for further consideration.
+- `Program` field contains only EBT values for OK records, reflecting a policy characteristic; EBT as the sole delivery mechanism may indicate how OK's SNAP program is not as robust as other states, such as MN (FIPS 27), which administers a mix of EBT and non-EBT delivery mechanisms.
+
+**Findings from Univariate EDA**:
+- NPA Participation dwarfs PA Participation in OK. This could be reflective of policy choices surrounding TANF.
+- Distributions are heavily right-skewed, with more participation and issuance funds observed near two urban centers, OKC and Tulsa.
+- Participation and Issuance track alongside one another, which makes intuitive sense.
+
+**To Do**:
+- Investigate whether participation/issuance increase over time.
+- Investigate seasonality: are more persons present in the Jan or July cycles?

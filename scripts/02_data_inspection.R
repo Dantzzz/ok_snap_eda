@@ -12,3 +12,4 @@ dim(df)      # Shape: Rows and columns
 str(df)      # Structure: Data types and column names
 head(df)     # Preview: First few rows
 summary(df)  # Summary statistics: Min, Max, Mean, etc.; No missing values
+colSums(is.na(df)) # Verify no missing values
