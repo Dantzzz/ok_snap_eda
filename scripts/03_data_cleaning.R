@@ -10,12 +10,12 @@
 df <- read.csv("data/snap_enrollment_oklahoma.csv")
 
 ### Review
-paste0(min(df$Date), " - ", max(df_clean$Date)) # Jan12 - Jan19
+paste0(min(df$Date), " - ", max(df$Date)) # Jan12 - Jan19
 colnames(df)
 class(df$Date)
 class(df$FIPS)
 
-### Clean data types
+### Transform data types
 df_clean <- df # copy original for cleaning
 df_clean$Date <- as.Date(df_clean$Date, format = "%Y-%m-%d") # Convert Date to Date
 class(df_clean$Date) # Verify Date type
@@ -38,6 +38,8 @@ paste0("Date Range: ", min(chk_all_issuance$Date), " to ", max(chk_all_issuance$
 ##  - Participation vs issuance; are there instances in which participation > issuance? Why?
 ##  - For BigQuery: Is Oklahoma anomalous vis-a-vis Program == 'EBT'?
 ##  - How does SNAP participation change over time across Oklahoma?
+
+source("scripts/03b_data_tidy.R") # Tidy Date and GeoDesc cols
 
 ### Export cleaned dataset
 write.csv(df_clean, "data/snap_enrollment_oklahoma_clean.csv", row.names = FALSE)

@@ -7,7 +7,7 @@
 ### Load
 df <- read.csv("data/snap_enrollment_oklahoma.csv")
 
-### Inspect
+### Inspect Base R functions
 dim(df)      # Shape: Rows and columns
 str(df)      # Structure: Data types and column names
 head(df)     # Preview: First few rows
