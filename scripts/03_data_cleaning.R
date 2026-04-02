@@ -32,12 +32,9 @@ chk_all_issuance <- df_clean[df_clean$SNAP_All_Issuance == 0, ]
 unique(chk_all_issuance$FIPS) # 13 distinct FIPS with zero issuance
 paste0("Date Range: ", min(chk_all_issuance$Date), " to ", max(chk_all_issuance$Date)) # show date range
 
-### Preliminary Questions: 
+### Preliminary Questions:
 ##  - 15 time periods across 7 years (plus Jan2019); 1155 observations doesn't add up.
-##  - NPA participation vs PA participation: Why is NPA participation so much greater than PA participation?
-##  - Participation vs issuance; are there instances in which participation > issuance? Why?
 ##  - For BigQuery: Is Oklahoma anomalous vis-a-vis Program == 'EBT'?
-##  - How does SNAP participation change over time across Oklahoma?
 
 source("scripts/03b_data_tidy.R") # Tidy Date and GeoDesc cols
 

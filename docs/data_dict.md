@@ -31,7 +31,3 @@ for the state of Oklahoma, subsetted from the USDA FNS national dataset via BigQ
 - NPA Participation dwarfs PA Participation in OK. This could be reflective of policy choices surrounding TANF.
 - Distributions are heavily right-skewed, with more participation and issuance funds observed near two urban centers, OKC and Tulsa.
 - Participation and Issuance track alongside one another, which makes intuitive sense.
-
-**To Do**:
-- Investigate whether participation/issuance increase over time.
-- Investigate seasonality: are more persons present in the Jan or July cycles?
